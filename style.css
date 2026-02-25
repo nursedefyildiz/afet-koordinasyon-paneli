@@ -79,6 +79,40 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     padding: 0 20px;
 }
 
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 10px auto 20px auto;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0d1b2a;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #78909c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-urgent { color: #d32f2f; } /* Acil olanlar için kırmızı */
+
 #help-feed a:hover {
     color: #2a9d8f !important;
 }
