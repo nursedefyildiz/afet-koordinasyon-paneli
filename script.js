@@ -54,7 +54,7 @@ function renderFeed(data) {
                     <span class="badge" style="background:#e8eaf6; color:#1a237e; padding:4px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold;">
                          ${(item.kategori || "GENEL").toUpperCase()}
                     </span>
-                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL DURUM</b>' : ''}
+                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL</b>' : ''}
                 </div>
                 
                 <h3 style="margin: 12px 0 8px 0; color:#0d1b2a;">${item.baslik}</h3>
@@ -181,3 +181,4 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 
 window.onload = initApp;
+
