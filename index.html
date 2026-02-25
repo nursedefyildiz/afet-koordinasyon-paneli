@@ -12,14 +12,15 @@
     <header class="main-header">
         <h1>AFET DESTEK KOORDİNASYON</h1>
         <p>Güvenilir Yardım ve Görev Yönetim Portalı</p>
+        <div class="search-container">
+    <input type="text" id="searchInput" placeholder="İlanlarda veya konumda ara... (Örn: Bebek maması, Düzce)" onkeyup="searchData()">
+        </div>
     </header>
 
         <div class="container">
             <div id="stats-panel" class="stats-container">
         </div>
-        <div class="search-container">
-    <input type="text" id="searchInput" placeholder="İlanlarda veya konumda ara... (Örn: Bebek maması, Düzce)" onkeyup="searchData()">
-        </div>
+        
         <section class="filter-section">
             <button class="filter-btn active" onclick="filterData('Tümü', this)">Tümü</button>
             <button class="filter-btn" onclick="filterData('gida', this)">Gıda</button>
