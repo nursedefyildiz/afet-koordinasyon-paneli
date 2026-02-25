@@ -67,7 +67,7 @@ function renderFeed(data) {
                         <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.konum)}" 
                         target="_blank" 
                         style="color: #1a237e; text-decoration: none; font-weight: bold; border-bottom:#1a237e;">
-                        Haritada Aç
+                        Harita
                         </a>
                     </span>
     <span>📅 <b>Tarih:</b> ${item.tarih}</span>
@@ -179,4 +179,5 @@ function searchData() {
 // Olay Dinleyicileri
 window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
+
 window.onload = initApp;
