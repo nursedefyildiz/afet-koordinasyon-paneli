@@ -56,7 +56,7 @@ function renderFeed(data) {
                     <span class="badge" style="background:#e8eaf6; color:#1a237e; padding:4px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold;">
                          ${(item.kategori || "GENEL").toUpperCase()}
                     </span>
-                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL DURUM</b>' : ''}
+                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL</b>' : ''}
                 </div>
                 
                 <h3 style="margin: 12px 0 8px 0; color:#0d1b2a;">${item.baslik}</h3>
@@ -69,7 +69,7 @@ function renderFeed(data) {
                         <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.konum)}" 
                         target="_blank" 
                         style="color: #1a237e; text-decoration: none; font-weight: bold; border-bottom:#1a237e;">
-                        Haritada Aç
+                        Harita
                         </a>
                     </span>
     <span>📅 <b>Tarih:</b> ${item.tarih}</span>
