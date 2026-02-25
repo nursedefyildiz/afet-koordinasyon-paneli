@@ -1,0 +1,110 @@
+:root {
+    --navy: #0d1b2a; 
+    --accent: #1b263b;
+    --danger: #e63946;
+    --success: #2a9d8f;
+    --bg: #f8f9fa;
+    --text: #1d3557;
+}
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; }
+
+#status-band { text-align: center; padding: 10px; font-weight: bold; background: var(--success); color: white; transition: 0.3s; }
+.status-offline { background: var(--danger) !important; }
+
+.main-header { background: var(--navy); color: white; padding: 1.5rem; text-align: center; }
+
+.container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+
+.main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+/* Kart Stilleri */
+.card { background: white; border-radius: 4px; padding: 15px; margin-bottom: 15px; border: 1px solid #dee2e6; border-left: 5px solid var(--navy); }
+.card h3 { margin-top: 0; color: var(--navy); }
+
+
+/* Filtreleme alanının dış çerçevesi */
+.filter-wrapper {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky; /* Sayfayı kaydırınca üstte kalır */
+    top: 0;
+    z-index: 100;
+}
+
+.filter-section {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Mobilde yana kaysın */
+    padding: 5px 20px;
+    scrollbar-width: none; /* Firefox için kaydırma çubuğunu gizle */
+}
+
+.filter-section::-webkit-scrollbar {
+    display: none; /* Chrome/Safari için kaydırma çubuğunu gizle */
+}
+
+/* Butonlar */
+.filter-btn {
+    white-space: nowrap; /* Yazılar alt satıra geçmesin */
+    padding: 8px 18px;
+    border: 1px solid #cfd8dc;
+    background: #ffffff;
+    color: #455a64;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Seçili  Buton */
+.filter-btn.active {
+    background: #0d1b2a;
+    color: #ffffff;
+    border-color: #0d1b2a;
+    box-shadow: 0 4px 10px rgba(13, 27, 42, 0.2);
+}
+
+/* Üzerine gelince (Hover) */
+.filter-btn:hover:not(.active) {
+    background: #f1f3f4;
+    border-color: #90a4ae;
+}
+
+.search-container {
+    max-width: 1200px;
+    margin: 0 auto 15px auto;
+    padding: 0 20px;
+}
+
+#help-feed a:hover {
+    color: #2a9d8f !important;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #cfd8dc;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    border-color: #0d1b2a; 
+    box-shadow: 0 0 8px rgba(13, 27, 42, 0.1);
+}
+
+.btn-assign { background: var(--navy); color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }
+.btn-delete { background: #f1f3f5; color: var(--danger); border: none; padding: 6px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 5px; font-size: 0.8rem; }
+
+@media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}

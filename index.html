@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afet Destek Koordinasyon | Profesyonel Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="status-band" class="status-online">SİSTEM ÇEVRİMİÇİ</div>
+
+    <header class="main-header">
+        <h1>AFET DESTEK KOORDİNASYON</h1>
+        <p>Güvenilir Yardım ve Görev Yönetim Portalı</p>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+    <input type="text" id="searchInput" placeholder="İlanlarda veya konumda ara... (Örn: Bebek maması, Düzce)" onkeyup="searchData()">
+</div>
+ <section class="filter-section">
+    <button class="filter-btn active" onclick="filterData('Tümü', this)">Tümü</button>
+    <button class="filter-btn" onclick="filterData('gida', this)">Gıda</button>
+    <button class="filter-btn" onclick="filterData('barinma', this)">Barınma</button>
+    <button class="filter-btn" onclick="filterData('saglik', this)">Sağlık</button>
+    <button class="filter-btn" onclick="filterData('hayvanlar', this)">Hayvanlar</button>
+    <button class="filter-btn" onclick="filterData('egitim', this)">Eğitim</button>
+    <button class="filter-btn" onclick="filterData('esya', this)">Eşya</button>
+    <button class="filter-btn" onclick="filterData('psikoloji', this)">Psikoloji</button>
+    <button class="filter-btn" onclick="filterData('lojistik', this)">Lojistik</button>
+    <button class="filter-btn" onclick="filterData('cocuk', this)">Çocuk</button>
+    <button class="filter-btn" onclick="filterData('is', this)">İş</button>
+</section>
+
+        <div class="main-grid">
+            <section class="feed-section">
+                <h2>Güncel Yardım İlanları</h2>
+                <div id="help-feed" class="cards-container">
+                    <p>Veriler yükleniyor...</p>
+                </div>
+            </section>
+
+            <aside class="tasks-section">
+                <h2>Üstlendiğim Görevler</h2>
+                <div id="my-tasks" class="task-list">
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Henüz bir görev üstlenmediniz.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<footer style="background:#0d1b2a; color:white; text-align:center; padding:30px; margin-top:50px;">
+    <p style="margin:0; font-size:0.9rem; opacity:0.8;">
+        <b>Afet Destek Koordinasyon Sistemi</b>
+    </p>
+    <p style="margin:5px 0 0 0; font-size:0.75rem; opacity:0.5;">
+        Bu platform simülasyon amaçlı bir Hackathon projesidir. <br>
+        © 2026 | Nursedef Yıldız - Düzce Üniversitesi
+    </p>
+</footer>
+</html>
