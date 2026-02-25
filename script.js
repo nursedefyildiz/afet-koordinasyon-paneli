@@ -23,6 +23,8 @@ async function initApp() {
 
 // 2. Yardım İlanları
 function renderFeed(data) {
+
+    updateStats(data);
     const feed = document.getElementById('help-feed');
     
     let myTasks = JSON.parse(localStorage.getItem('myTasks')) || [];
@@ -54,7 +56,7 @@ function renderFeed(data) {
                     <span class="badge" style="background:#e8eaf6; color:#1a237e; padding:4px 10px; border-radius:4px; font-size:0.7rem; font-weight:bold;">
                          ${(item.kategori || "GENEL").toUpperCase()}
                     </span>
-                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL</b>' : ''}
+                    ${item.acil ? '<b style="color:#d32f2f; font-size:0.75rem; animation: blink 1.5s infinite;">⚠️ ACİL DURUM</b>' : ''}
                 </div>
                 
                 <h3 style="margin: 12px 0 8px 0; color:#0d1b2a;">${item.baslik}</h3>
@@ -67,13 +69,16 @@ function renderFeed(data) {
                         <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.konum)}" 
                         target="_blank" 
                         style="color: #1a237e; text-decoration: none; font-weight: bold; border-bottom:#1a237e;">
-                        Harita
+                        Haritada Aç
                         </a>
                     </span>
     <span>📅 <b>Tarih:</b> ${item.tarih}</span>
 </div>
                 
-                
+                <button onclick="shareTask('${item.baslik}', '${item.konum}')" 
+                    style="background: #e1f5fe; border: none; color: #01579b; padding: 12px 15px; border-radius: 8px; cursor: pointer; margin-top: 15px; font-weight: bold; flex: 1;">
+               ➤ Paylaş
+            </button>
                 <button class="btn-assign" id="btn-${item.id}" 
                         onclick="assignTask(${item.id})" 
                         style="margin-top:15px; cursor:pointer; 
@@ -176,9 +181,46 @@ function searchData() {
     renderFeed(filtered);
 }
 
+function updateStats(data) {
+    const statsPanel = document.getElementById('stats-panel');
+    const myTasks = JSON.parse(localStorage.getItem('myTasks')) || [];
+
+    const total = data.length;
+    const urgent = data.filter(item => item.acil === true).length;
+    const assigned = myTasks.length;
+
+    statsPanel.innerHTML = `
+        <div class="stat-card">
+            <span class="stat-value">${total}</span>
+            <span class="stat-label">Aktif İlan</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value stat-urgent">${urgent}</span>
+            <span class="stat-label">Acil İhtiyaç</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value" style="color: #2a9d8f;">${assigned}</span>
+            <span class="stat-label"> Üstlendiğim</span>
+        </div>
+    `;
+}
+
+function shareTask(baslik, konum) {
+    const text = `🚨 YARDIM ÇAĞRISI: ${baslik}\n📍 Konum: ${konum}\n🛡️ Afet Koordinasyon Sistemi üzerinden paylaşıldı.`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: 'Afet Yardımı',
+            text: text,
+            url: window.location.href
+        });
+    } else {
+        // Bilgisayarda ise WhatsApp Web'e yönlendirir
+        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+}
+
 // Olay Dinleyicileri
 window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
-
 window.onload = initApp;
-
