@@ -14,23 +14,25 @@
         <p>Güvenilir Yardım ve Görev Yönetim Portalı</p>
     </header>
 
-    <div class="container">
+        <div class="container">
+            <div id="stats-panel" class="stats-container">
+        </div>
         <div class="search-container">
     <input type="text" id="searchInput" placeholder="İlanlarda veya konumda ara... (Örn: Bebek maması, Düzce)" onkeyup="searchData()">
-</div>
- <section class="filter-section">
-    <button class="filter-btn active" onclick="filterData('Tümü', this)">Tümü</button>
-    <button class="filter-btn" onclick="filterData('gida', this)">Gıda</button>
-    <button class="filter-btn" onclick="filterData('barinma', this)">Barınma</button>
-    <button class="filter-btn" onclick="filterData('saglik', this)">Sağlık</button>
-    <button class="filter-btn" onclick="filterData('hayvanlar', this)">Hayvanlar</button>
-    <button class="filter-btn" onclick="filterData('egitim', this)">Eğitim</button>
-    <button class="filter-btn" onclick="filterData('esya', this)">Eşya</button>
-    <button class="filter-btn" onclick="filterData('psikoloji', this)">Psikoloji</button>
-    <button class="filter-btn" onclick="filterData('lojistik', this)">Lojistik</button>
-    <button class="filter-btn" onclick="filterData('cocuk', this)">Çocuk</button>
-    <button class="filter-btn" onclick="filterData('is', this)">İş</button>
-</section>
+        </div>
+        <section class="filter-section">
+            <button class="filter-btn active" onclick="filterData('Tümü', this)">Tümü</button>
+            <button class="filter-btn" onclick="filterData('gida', this)">Gıda</button>
+            <button class="filter-btn" onclick="filterData('barinma', this)">Barınma</button>
+            <button class="filter-btn" onclick="filterData('saglik', this)">Sağlık</button>
+            <button class="filter-btn" onclick="filterData('hayvanlar', this)">Hayvanlar</button>
+            <button class="filter-btn" onclick="filterData('egitim', this)">Eğitim</button>
+            <button class="filter-btn" onclick="filterData('esya', this)">Eşya</button>
+            <button class="filter-btn" onclick="filterData('psikoloji', this)">Psikoloji</button>
+            <button class="filter-btn" onclick="filterData('lojistik', this)">Lojistik</button>
+            <button class="filter-btn" onclick="filterData('cocuk', this)">Çocuk</button>
+            <button class="filter-btn" onclick="filterData('is', this)">İş</button>
+        </section>
 
         <div class="main-grid">
             <section class="feed-section">
